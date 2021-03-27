@@ -21,6 +21,7 @@
 		A4B60D91260F5F7400014470 /* WidgetCenterStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B60D90260F5F7400014470 /* WidgetCenterStore.swift */; };
 		A4B60D96260F67F000014470 /* WidgetCenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B60D95260F67F000014470 /* WidgetCenterProtocol.swift */; };
 		A4B60D9A260F681700014470 /* WidgetInfoProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B60D99260F681700014470 /* WidgetInfoProtocol.swift */; };
+		A4B60DA0260F69D500014470 /* WidgetCenterStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B60D9F260F69D500014470 /* WidgetCenterStoreTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		A4B60D90260F5F7400014470 /* WidgetCenterStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetCenterStore.swift; sourceTree = "<group>"; };
 		A4B60D95260F67F000014470 /* WidgetCenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetCenterProtocol.swift; sourceTree = "<group>"; };
 		A4B60D99260F681700014470 /* WidgetInfoProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetInfoProtocol.swift; sourceTree = "<group>"; };
+		A4B60D9F260F69D500014470 /* WidgetCenterStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetCenterStoreTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 				A4B60D6B260F3B2E00014470 /* WidgetTrackerTests.swift */,
 				A4B60D78260F5CFB00014470 /* WidgetStoreSpy.swift */,
 				A4B60D7C260F5DAB00014470 /* EvenTrackingSpy.swift */,
+				A4B60D9F260F69D500014470 /* WidgetCenterStoreTests.swift */,
 			);
 			path = WidgetCenterExampleTests;
 			sourceTree = "<group>";
@@ -251,6 +254,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4B60DA0260F69D500014470 /* WidgetCenterStoreTests.swift in Sources */,
 				A4B60D79260F5CFB00014470 /* WidgetStoreSpy.swift in Sources */,
 				A4B60D7D260F5DAB00014470 /* EvenTrackingSpy.swift in Sources */,
 				A4B60D6C260F3B2E00014470 /* WidgetTrackerTests.swift in Sources */,
