@@ -51,6 +51,10 @@ class WidgetCenterSpy: WidgetCenterProtocol {
     func complete(withInfos infos: [WidgetInfo], at index: Int = 0) {
         configCompletions[index](.success(infos))
     }
+    
+    func complete(withError error: Error, at index: Int = 0) {
+        configCompletions[index](.failure(error))
+    }
 }
 
 struct WidgetInfo: WidgetInfoProtocol {
@@ -108,6 +112,25 @@ class WidgetCenterStoreTests: XCTestCase {
         let infos = [WidgetInfo]()
         
         center.complete(withInfos: infos)
+        
+        wait(for: [exp], timeout: 0.1)
+    }
+    
+    func test_retrieveInstalledWidgets_deliversErrorOnError() {
+        let (sut, center) = makeSUT()
+        
+        let exp = expectation(description: "retrieve completion")
+        sut.retrieveInstalledWidgets { result in
+            switch result {
+            case .success:
+                XCTFail("Expected to result with failure, we got \(result) instead")
+            case .failure:
+                break
+            }
+            exp.fulfill()
+        }
+        
+        center.complete(withError: NSError(domain: "any", code: 200))
         
         wait(for: [exp], timeout: 0.1)
     }
