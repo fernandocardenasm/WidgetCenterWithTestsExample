@@ -91,6 +91,27 @@ class WidgetCenterStoreTests: XCTestCase {
         wait(for: [exp], timeout: 0.1)
     }
     
+    func test_retrieveInstalledWidgets_deliversWithEmptyArray() {
+        let (sut, center) = makeSUT()
+        
+        let exp = expectation(description: "retrieve completion")
+        sut.retrieveInstalledWidgets { result in
+            switch result {
+            case let .success(receivedSizes):
+                XCTAssertEqual(receivedSizes, [])
+            case .failure:
+                XCTFail("Expected to result successfully, we got \(result) instead")
+            }
+            exp.fulfill()
+        }
+        
+        let infos = [WidgetInfo]()
+        
+        center.complete(withInfos: infos)
+        
+        wait(for: [exp], timeout: 0.1)
+    }
+    
     private func makeSUT() -> (sut: WidgetStore, widgetCenter: WidgetCenterSpy) {
         let widgetCenter = WidgetCenterSpy()
         let sut = WidterCenterStore(widgetCenter: widgetCenter)
