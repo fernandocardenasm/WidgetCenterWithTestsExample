@@ -12,6 +12,7 @@
 		A4B60D02260E418700014470 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4B60D01260E418700014470 /* Assets.xcassets */; };
 		A4B60D05260E418700014470 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4B60D04260E418700014470 /* Preview Assets.xcassets */; };
 		A4B60D6C260F3B2E00014470 /* WidgetTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B60D6B260F3B2E00014470 /* WidgetTrackerTests.swift */; };
+		A4B60D79260F5CFB00014470 /* WidgetStoreSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B60D78260F5CFB00014470 /* WidgetStoreSpy.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +35,7 @@
 		A4B60D0B260E418700014470 /* WidgetCenterExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WidgetCenterExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4B60D11260E418700014470 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A4B60D6B260F3B2E00014470 /* WidgetTrackerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetTrackerTests.swift; sourceTree = "<group>"; };
+		A4B60D78260F5CFB00014470 /* WidgetStoreSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetStoreSpy.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 			children = (
 				A4B60D11260E418700014470 /* Info.plist */,
 				A4B60D6B260F3B2E00014470 /* WidgetTrackerTests.swift */,
+				A4B60D78260F5CFB00014470 /* WidgetStoreSpy.swift */,
 			);
 			path = WidgetCenterExampleTests;
 			sourceTree = "<group>";
@@ -209,6 +212,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4B60D79260F5CFB00014470 /* WidgetStoreSpy.swift in Sources */,
 				A4B60D6C260F3B2E00014470 /* WidgetTrackerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

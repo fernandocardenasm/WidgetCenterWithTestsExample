@@ -62,24 +62,6 @@ class EventTrackingSpy: EventTracking {
     }
 }
 
-class WidgetStoreSpy: WidgetStore {
-    
-    typealias Completion = (Result<[WidgetSize], Error>) -> Void
-    var retrievalCompletions = [Completion]()
-    
-    func retrieveInstalledWidgets(completion: @escaping Completion) {
-        retrievalCompletions.append(completion)
-    }
-    
-    func completeRetrieval(withWidgets widgetSizes: [WidgetSize], at index: Int = 0) {
-        retrievalCompletions[index](.success(widgetSizes))
-    }
-    
-    func completeRetrieval(withError error: Error, at index: Int = 0) {
-        retrievalCompletions[index](.failure(error))
-    }
-}
-
 class WidgetTrackerTests: XCTestCase {
     
     func test_init_doesTrackInstalledWidgets() {
