@@ -16,7 +16,7 @@ class WidgetTrackerTests: XCTestCase {
         XCTAssertTrue(tracking.events.isEmpty)
     }
     
-    func test_trackInstalledWidgets_whenWidgetsNonEmpty() {
+    func test_trackInstalledWidgets_onWidgetsNonEmpty() {
         let (sut, tracking, store) = makeSUT()
         
         sut.trackInstalledWidgets()
@@ -64,7 +64,7 @@ class WidgetTrackerTests: XCTestCase {
         )
     }
     
-    func test_trackInstalledWidgets_whenWidgetsEmpty() {
+    func test_trackInstalledWidgets_onWidgetsEmpty() {
         let (sut, tracking, store) = makeSUT()
         
         sut.trackInstalledWidgets()
@@ -80,7 +80,7 @@ class WidgetTrackerTests: XCTestCase {
         )
     }
     
-    func test_trackInstalledWidgets_doesNotTrack_whenError() {
+    func test_trackInstalledWidgets_doesNotTrack_onError() {
         let (sut, tracking, store) = makeSUT()
         
         sut.trackInstalledWidgets()
