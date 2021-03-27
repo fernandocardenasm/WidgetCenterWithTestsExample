@@ -47,7 +47,7 @@ class WidgetCenterStoreTests: XCTestCase {
         }
     }
     
-    func expect(_ sut: WidgetStore, toCompleteWith expectedResult: WidgetStore.RetrievalResult, when action: () -> Void) {
+    func expect(_ sut: WidgetStore, toCompleteWith expectedResult: WidgetStore.RetrievalResult, when action: () -> Void, file: StaticString = #file, line: UInt = #line) {
         let exp = expectation(description: "retrieve completion")
         sut.retrieveInstalledWidgets { receivedResult in
             switch (receivedResult, expectedResult) {
@@ -57,7 +57,7 @@ class WidgetCenterStoreTests: XCTestCase {
                 XCTAssertEqual(receivedError.domain, expectedError.domain)
                 XCTAssertEqual(receivedError.code, expectedError.code)
             default:
-                XCTFail("Expected: \(expectedResult), got \(receivedResult) instead")
+                XCTFail("Expected: \(expectedResult), got \(receivedResult) instead", file: file, line: line)
             }
             exp.fulfill()
         }
