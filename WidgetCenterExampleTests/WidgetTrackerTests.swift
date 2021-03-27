@@ -73,6 +73,10 @@ class WidgetStoreSpy: WidgetStore {
     func completeRetrieval(withWidgets widgetSizes: [WidgetSize], at index: Int = 0) {
         retrievalCompletions[index](.success(widgetSizes))
     }
+    
+    func completeRetrieval(withError error: Error, at index: Int = 0) {
+        retrievalCompletions[index](.failure(error))
+    }
 }
 
 class WidgetTrackerTests: XCTestCase {
@@ -117,6 +121,16 @@ class WidgetTrackerTests: XCTestCase {
                             dict: []
                        )]
         )
+    }
+    
+    func test_trackInstalledWidgets_doesNotTrack_whenError() {
+        let (sut, tracking, store) = makeSUT()
+        
+        sut.trackInstalledWidgets()
+        
+        store.completeRetrieval(withError: NSError(domain: "any", code: 200))
+        
+        XCTAssertTrue(tracking.events.isEmpty)
     }
     
     private func makeSUT() -> (WidgetTracker, EventTrackingSpy, WidgetStoreSpy) {
