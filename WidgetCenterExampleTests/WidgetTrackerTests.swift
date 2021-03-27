@@ -33,7 +33,8 @@ class WidgetTracker {
     }
     
     func trackInstalledWidgets() {
-        store.retrieveInstalledWidgets { result in
+        store.retrieveInstalledWidgets { [weak self] result in
+            guard let self = self else { return }
             switch result {
             case let .success(widgets):
                 self.trackingService.track("widgetEvent", dict: self.map(widgets))
@@ -161,11 +162,21 @@ class WidgetTrackerTests: XCTestCase {
         XCTAssertTrue(tracking.events.isEmpty)
     }
     
-    private func makeSUT() -> (WidgetTracker, EventTrackingSpy, WidgetStoreSpy) {
+    private func makeSUT(file: StaticString = #file, line: UInt = #line) -> (WidgetTracker, EventTrackingSpy, WidgetStoreSpy) {
         let tracking = EventTrackingSpy()
         let store = WidgetStoreSpy()
         let sut = WidgetTracker(trackingService: tracking, store: store)
         
+        trackForMemoryLeaks(tracking, file: file, line: line)
+        trackForMemoryLeaks(store, file: file, line: line)
+        trackForMemoryLeaks(sut, file: file, line: line)
+        
         return (sut, tracking, store)
+    }
+    
+    private func trackForMemoryLeaks(_ instance: AnyObject, file: StaticString = #file, line: UInt = #line) {
+        addTeardownBlock { [weak instance] in
+            XCTAssertNil(instance, "Instance should have been deallocated. Potential Memory leak.", file: file, line: line)
+        }
     }
 }
