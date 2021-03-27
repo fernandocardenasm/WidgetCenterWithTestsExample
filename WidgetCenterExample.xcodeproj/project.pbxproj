@@ -11,20 +11,11 @@
 		A4B60D00260E418400014470 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B60CFF260E418400014470 /* ContentView.swift */; };
 		A4B60D02260E418700014470 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4B60D01260E418700014470 /* Assets.xcassets */; };
 		A4B60D05260E418700014470 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4B60D04260E418700014470 /* Preview Assets.xcassets */; };
-		A4B60D10260E418700014470 /* WidgetCenterExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B60D0F260E418700014470 /* WidgetCenterExampleTests.swift */; };
-		A4B60D1B260E418700014470 /* WidgetCenterExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B60D1A260E418700014470 /* WidgetCenterExampleUITests.swift */; };
 		A4B60D6C260F3B2E00014470 /* WidgetTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B60D6B260F3B2E00014470 /* WidgetTrackerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		A4B60D0C260E418700014470 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A4B60CF2260E418400014470 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A4B60CF9260E418400014470;
-			remoteInfo = WidgetCenterExample;
-		};
-		A4B60D17260E418700014470 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A4B60CF2260E418400014470 /* Project object */;
 			proxyType = 1;
@@ -41,11 +32,7 @@
 		A4B60D04260E418700014470 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A4B60D06260E418700014470 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A4B60D0B260E418700014470 /* WidgetCenterExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WidgetCenterExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A4B60D0F260E418700014470 /* WidgetCenterExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetCenterExampleTests.swift; sourceTree = "<group>"; };
 		A4B60D11260E418700014470 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A4B60D16260E418700014470 /* WidgetCenterExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WidgetCenterExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A4B60D1A260E418700014470 /* WidgetCenterExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetCenterExampleUITests.swift; sourceTree = "<group>"; };
-		A4B60D1C260E418700014470 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A4B60D6B260F3B2E00014470 /* WidgetTrackerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetTrackerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -64,13 +51,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A4B60D13260E418700014470 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -79,7 +59,6 @@
 			children = (
 				A4B60CFC260E418400014470 /* WidgetCenterExample */,
 				A4B60D0E260E418700014470 /* WidgetCenterExampleTests */,
-				A4B60D19260E418700014470 /* WidgetCenterExampleUITests */,
 				A4B60CFB260E418400014470 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -89,7 +68,6 @@
 			children = (
 				A4B60CFA260E418400014470 /* WidgetCenterExample.app */,
 				A4B60D0B260E418700014470 /* WidgetCenterExampleTests.xctest */,
-				A4B60D16260E418700014470 /* WidgetCenterExampleUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -117,20 +95,10 @@
 		A4B60D0E260E418700014470 /* WidgetCenterExampleTests */ = {
 			isa = PBXGroup;
 			children = (
-				A4B60D0F260E418700014470 /* WidgetCenterExampleTests.swift */,
 				A4B60D11260E418700014470 /* Info.plist */,
 				A4B60D6B260F3B2E00014470 /* WidgetTrackerTests.swift */,
 			);
 			path = WidgetCenterExampleTests;
-			sourceTree = "<group>";
-		};
-		A4B60D19260E418700014470 /* WidgetCenterExampleUITests */ = {
-			isa = PBXGroup;
-			children = (
-				A4B60D1A260E418700014470 /* WidgetCenterExampleUITests.swift */,
-				A4B60D1C260E418700014470 /* Info.plist */,
-			);
-			path = WidgetCenterExampleUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -171,24 +139,6 @@
 			productReference = A4B60D0B260E418700014470 /* WidgetCenterExampleTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		A4B60D15260E418700014470 /* WidgetCenterExampleUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = A4B60D25260E418700014470 /* Build configuration list for PBXNativeTarget "WidgetCenterExampleUITests" */;
-			buildPhases = (
-				A4B60D12260E418700014470 /* Sources */,
-				A4B60D13260E418700014470 /* Frameworks */,
-				A4B60D14260E418700014470 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				A4B60D18260E418700014470 /* PBXTargetDependency */,
-			);
-			name = WidgetCenterExampleUITests;
-			productName = WidgetCenterExampleUITests;
-			productReference = A4B60D16260E418700014470 /* WidgetCenterExampleUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -202,10 +152,6 @@
 						CreatedOnToolsVersion = 12.4;
 					};
 					A4B60D0A260E418700014470 = {
-						CreatedOnToolsVersion = 12.4;
-						TestTargetID = A4B60CF9260E418400014470;
-					};
-					A4B60D15260E418700014470 = {
 						CreatedOnToolsVersion = 12.4;
 						TestTargetID = A4B60CF9260E418400014470;
 					};
@@ -226,7 +172,6 @@
 			targets = (
 				A4B60CF9260E418400014470 /* WidgetCenterExample */,
 				A4B60D0A260E418700014470 /* WidgetCenterExampleTests */,
-				A4B60D15260E418700014470 /* WidgetCenterExampleUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -242,13 +187,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		A4B60D09260E418700014470 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A4B60D14260E418700014470 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -272,15 +210,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A4B60D6C260F3B2E00014470 /* WidgetTrackerTests.swift in Sources */,
-				A4B60D10260E418700014470 /* WidgetCenterExampleTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A4B60D12260E418700014470 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A4B60D1B260E418700014470 /* WidgetCenterExampleUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,11 +220,6 @@
 			isa = PBXTargetDependency;
 			target = A4B60CF9260E418400014470 /* WidgetCenterExample */;
 			targetProxy = A4B60D0C260E418700014470 /* PBXContainerItemProxy */;
-		};
-		A4B60D18260E418700014470 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = A4B60CF9260E418400014470 /* WidgetCenterExample */;
-			targetProxy = A4B60D17260E418700014470 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -504,46 +428,6 @@
 			};
 			name = Release;
 		};
-		A4B60D26260E418700014470 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = SAR2G9PZXH;
-				INFOPLIST_FILE = WidgetCenterExampleUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = cardenas.fernando.WidgetCenterExampleUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = WidgetCenterExample;
-			};
-			name = Debug;
-		};
-		A4B60D27260E418700014470 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = SAR2G9PZXH;
-				INFOPLIST_FILE = WidgetCenterExampleUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = cardenas.fernando.WidgetCenterExampleUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = WidgetCenterExample;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -570,15 +454,6 @@
 			buildConfigurations = (
 				A4B60D23260E418700014470 /* Debug */,
 				A4B60D24260E418700014470 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		A4B60D25260E418700014470 /* Build configuration list for PBXNativeTarget "WidgetCenterExampleUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A4B60D26260E418700014470 /* Debug */,
-				A4B60D27260E418700014470 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
