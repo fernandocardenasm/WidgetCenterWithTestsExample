@@ -13,6 +13,7 @@
 		A4B60D05260E418700014470 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4B60D04260E418700014470 /* Preview Assets.xcassets */; };
 		A4B60D10260E418700014470 /* WidgetCenterExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B60D0F260E418700014470 /* WidgetCenterExampleTests.swift */; };
 		A4B60D1B260E418700014470 /* WidgetCenterExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B60D1A260E418700014470 /* WidgetCenterExampleUITests.swift */; };
+		A4B60D6C260F3B2E00014470 /* WidgetTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B60D6B260F3B2E00014470 /* WidgetTrackerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		A4B60D16260E418700014470 /* WidgetCenterExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WidgetCenterExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4B60D1A260E418700014470 /* WidgetCenterExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetCenterExampleUITests.swift; sourceTree = "<group>"; };
 		A4B60D1C260E418700014470 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A4B60D6B260F3B2E00014470 /* WidgetTrackerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetTrackerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 			children = (
 				A4B60D0F260E418700014470 /* WidgetCenterExampleTests.swift */,
 				A4B60D11260E418700014470 /* Info.plist */,
+				A4B60D6B260F3B2E00014470 /* WidgetTrackerTests.swift */,
 			);
 			path = WidgetCenterExampleTests;
 			sourceTree = "<group>";
@@ -268,6 +271,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4B60D6C260F3B2E00014470 /* WidgetTrackerTests.swift in Sources */,
 				A4B60D10260E418700014470 /* WidgetCenterExampleTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
