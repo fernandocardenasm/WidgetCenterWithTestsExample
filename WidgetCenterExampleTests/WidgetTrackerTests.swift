@@ -85,7 +85,7 @@ class WidgetTrackerTests: XCTestCase {
         
         sut.trackInstalledWidgets()
         
-        store.completeRetrieval(withError: NSError(domain: "any", code: 200))
+        store.completeRetrieval(withError: anyNSError())
         
         XCTAssertTrue(tracking.events.isEmpty)
     }
@@ -100,5 +100,9 @@ class WidgetTrackerTests: XCTestCase {
         trackForMemoryLeaks(sut, file: file, line: line)
         
         return (sut, tracking, store)
+    }
+    
+    private func anyNSError() -> NSError {
+        NSError(domain: "any", code: 200)
     }
 }
