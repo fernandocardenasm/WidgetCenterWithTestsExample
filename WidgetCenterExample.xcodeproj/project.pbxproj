@@ -18,6 +18,9 @@
 		A4B60D85260F5E1600014470 /* WidgetSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B60D84260F5E1600014470 /* WidgetSize.swift */; };
 		A4B60D89260F5E3B00014470 /* WidgetStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B60D88260F5E3B00014470 /* WidgetStore.swift */; };
 		A4B60D8D260F5E5300014470 /* EvenTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B60D8C260F5E5300014470 /* EvenTracking.swift */; };
+		A4B60D91260F5F7400014470 /* WidgetCenterStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B60D90260F5F7400014470 /* WidgetCenterStore.swift */; };
+		A4B60D96260F67F000014470 /* WidgetCenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B60D95260F67F000014470 /* WidgetCenterProtocol.swift */; };
+		A4B60D9A260F681700014470 /* WidgetInfoProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B60D99260F681700014470 /* WidgetInfoProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +49,9 @@
 		A4B60D84260F5E1600014470 /* WidgetSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetSize.swift; sourceTree = "<group>"; };
 		A4B60D88260F5E3B00014470 /* WidgetStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetStore.swift; sourceTree = "<group>"; };
 		A4B60D8C260F5E5300014470 /* EvenTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvenTracking.swift; sourceTree = "<group>"; };
+		A4B60D90260F5F7400014470 /* WidgetCenterStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetCenterStore.swift; sourceTree = "<group>"; };
+		A4B60D95260F67F000014470 /* WidgetCenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetCenterProtocol.swift; sourceTree = "<group>"; };
+		A4B60D99260F681700014470 /* WidgetInfoProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetInfoProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +93,7 @@
 		A4B60CFC260E418400014470 /* WidgetCenterExample */ = {
 			isa = PBXGroup;
 			children = (
+				A4B60D94260F67D900014470 /* Widget */,
 				A4B60CFD260E418400014470 /* WidgetCenterExampleApp.swift */,
 				A4B60CFF260E418400014470 /* ContentView.swift */,
 				A4B60D01260E418700014470 /* Assets.xcassets */,
@@ -117,6 +124,16 @@
 				A4B60D7C260F5DAB00014470 /* EvenTrackingSpy.swift */,
 			);
 			path = WidgetCenterExampleTests;
+			sourceTree = "<group>";
+		};
+		A4B60D94260F67D900014470 /* Widget */ = {
+			isa = PBXGroup;
+			children = (
+				A4B60D95260F67F000014470 /* WidgetCenterProtocol.swift */,
+				A4B60D99260F681700014470 /* WidgetInfoProtocol.swift */,
+				A4B60D90260F5F7400014470 /* WidgetCenterStore.swift */,
+			);
+			path = Widget;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -218,9 +235,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4B60D9A260F681700014470 /* WidgetInfoProtocol.swift in Sources */,
 				A4B60D8D260F5E5300014470 /* EvenTracking.swift in Sources */,
 				A4B60D81260F5DDF00014470 /* WidgetTracker.swift in Sources */,
+				A4B60D91260F5F7400014470 /* WidgetCenterStore.swift in Sources */,
 				A4B60D00260E418400014470 /* ContentView.swift in Sources */,
+				A4B60D96260F67F000014470 /* WidgetCenterProtocol.swift in Sources */,
 				A4B60D85260F5E1600014470 /* WidgetSize.swift in Sources */,
 				A4B60CFE260E418400014470 /* WidgetCenterExampleApp.swift in Sources */,
 				A4B60D89260F5E3B00014470 /* WidgetStore.swift in Sources */,
