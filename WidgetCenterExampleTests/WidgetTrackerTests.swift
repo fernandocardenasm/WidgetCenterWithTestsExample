@@ -5,49 +5,8 @@
 //  Created by Fernando Cardenas on 27.03.21.
 //
 
+import WidgetCenterExample
 import XCTest
-
-protocol EventTracking {
-    func track(_ eventName: String, dict: [String])
-}
-
-enum WidgetSize: String {
-    case small
-    case medium
-    case large
-}
-
-protocol WidgetStore {
-    func retrieveInstalledWidgets(completion: @escaping (Result<[WidgetSize], Error>) -> Void)
-}
-
-class WidgetTracker {
-    
-    let trackingService: EventTracking
-    let store: WidgetStore
-    
-    init(trackingService: EventTracking,
-         store: WidgetStore) {
-        self.trackingService = trackingService
-        self.store = store
-    }
-    
-    func trackInstalledWidgets() {
-        store.retrieveInstalledWidgets { [weak self] result in
-            guard let self = self else { return }
-            switch result {
-            case let .success(widgets):
-                self.trackingService.track("widgetEvent", dict: self.map(widgets))
-            case .failure:
-                break
-            }
-        }
-    }
-    
-    private func map(_ widgetSizes: [WidgetSize]) -> [String] {
-        widgetSizes.map { $0.rawValue }
-    }
-}
 
 class WidgetTrackerTests: XCTestCase {
     

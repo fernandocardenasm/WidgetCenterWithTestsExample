@@ -5,9 +5,9 @@
 //  Created by Fernando Cardenas on 27.03.21.
 //
 
-import Foundation
+import WidgetCenterExample
 
-class WidgetStoreSpy: WidgetStore {
+final class WidgetStoreSpy: WidgetStore {
     
     typealias Completion = (Result<[WidgetSize], Error>) -> Void
     var retrievalCompletions = [Completion]()
