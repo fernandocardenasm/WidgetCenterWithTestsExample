@@ -9,36 +9,6 @@ import XCTest
 import WidgetCenterExample
 import WidgetKit
 
-class WidterCenterStore <MyWidgetCenter: WidgetCenterProtocol>: WidgetStore {
-    
-    let widgetCenter: MyWidgetCenter
-    
-    init(widgetCenter: MyWidgetCenter) {
-        self.widgetCenter = widgetCenter
-    }
-    
-    func retrieveInstalledWidgets(completion: @escaping (Result<[WidgetSize], Error>) -> Void) {
-        widgetCenter.getCurrentConfigurations { [weak self] result in
-            switch result {
-            case let .success(widgetInfos):
-                let widgetFamilies = widgetInfos.compactMap { self?.rawValueString(from: $0) }
-                completion(.success(widgetFamilies))
-            case let .failure(error):
-                completion(.failure(error))
-            }
-        }
-    }
-    
-    private func rawValueString(from widgetInfo: WidgetInfoProtocol) -> WidgetSize? {
-        switch widgetInfo.family {
-        case .systemSmall: return .small
-        case .systemMedium: return .medium
-        case .systemLarge: return .large
-        @unknown default: return nil
-        }
-    }
-}
-
 class WidgetCenterSpy: WidgetCenterProtocol {
     
     typealias Completion = (Result<[WidgetInfo], Error>) -> Void
@@ -137,7 +107,7 @@ class WidgetCenterStoreTests: XCTestCase {
     
     private func makeSUT() -> (sut: WidgetStore, widgetCenter: WidgetCenterSpy) {
         let widgetCenter = WidgetCenterSpy()
-        let sut = WidterCenterStore(widgetCenter: widgetCenter)
+        let sut = WidgetCenterStore(widgetCenter: widgetCenter)
         return (sut, widgetCenter)
     }
 }
