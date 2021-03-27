@@ -103,6 +103,22 @@ class WidgetTrackerTests: XCTestCase {
         )
     }
     
+    func test_trackInstalledWidgets_whenWidgetsEmpty() {
+        let (sut, tracking, store) = makeSUT()
+        
+        sut.trackInstalledWidgets()
+        
+        let widgets: [WidgetSize] = []
+        store.completeRetrieval(withWidgets: widgets)
+        
+        XCTAssertEqual(tracking.events,
+                       [EventTrackingSpy.Event(
+                            name: "widgetEvent",
+                            dict: []
+                       )]
+        )
+    }
+    
     private func makeSUT() -> (WidgetTracker, EventTrackingSpy, WidgetStoreSpy) {
         let tracking = EventTrackingSpy()
         let store = WidgetStoreSpy()
