@@ -23,6 +23,7 @@
 		A4B60D9A260F681700014470 /* WidgetInfoProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B60D99260F681700014470 /* WidgetInfoProtocol.swift */; };
 		A4B60DA0260F69D500014470 /* WidgetCenterStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B60D9F260F69D500014470 /* WidgetCenterStoreTests.swift */; };
 		A4B60DA4260F748100014470 /* WidgetCenterSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B60DA3260F748100014470 /* WidgetCenterSpy.swift */; };
+		A4B60DA8260F7A9A00014470 /* XCTestCase+TrackingMemoryLeaks.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B60DA7260F7A9A00014470 /* XCTestCase+TrackingMemoryLeaks.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		A4B60D99260F681700014470 /* WidgetInfoProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetInfoProtocol.swift; sourceTree = "<group>"; };
 		A4B60D9F260F69D500014470 /* WidgetCenterStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetCenterStoreTests.swift; sourceTree = "<group>"; };
 		A4B60DA3260F748100014470 /* WidgetCenterSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetCenterSpy.swift; sourceTree = "<group>"; };
+		A4B60DA7260F7A9A00014470 /* XCTestCase+TrackingMemoryLeaks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+TrackingMemoryLeaks.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +130,7 @@
 				A4B60D7C260F5DAB00014470 /* EvenTrackingSpy.swift */,
 				A4B60D9F260F69D500014470 /* WidgetCenterStoreTests.swift */,
 				A4B60DA3260F748100014470 /* WidgetCenterSpy.swift */,
+				A4B60DA7260F7A9A00014470 /* XCTestCase+TrackingMemoryLeaks.swift */,
 			);
 			path = WidgetCenterExampleTests;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A4B60DA0260F69D500014470 /* WidgetCenterStoreTests.swift in Sources */,
+				A4B60DA8260F7A9A00014470 /* XCTestCase+TrackingMemoryLeaks.swift in Sources */,
 				A4B60DA4260F748100014470 /* WidgetCenterSpy.swift in Sources */,
 				A4B60D79260F5CFB00014470 /* WidgetStoreSpy.swift in Sources */,
 				A4B60D7D260F5DAB00014470 /* EvenTrackingSpy.swift in Sources */,

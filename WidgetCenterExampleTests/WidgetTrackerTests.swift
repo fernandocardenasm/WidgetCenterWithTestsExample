@@ -101,10 +101,4 @@ class WidgetTrackerTests: XCTestCase {
         
         return (sut, tracking, store)
     }
-    
-    private func trackForMemoryLeaks(_ instance: AnyObject, file: StaticString = #file, line: UInt = #line) {
-        addTeardownBlock { [weak instance] in
-            XCTAssertNil(instance, "Instance should have been deallocated. Potential Memory leak.", file: file, line: line)
-        }
-    }
 }
