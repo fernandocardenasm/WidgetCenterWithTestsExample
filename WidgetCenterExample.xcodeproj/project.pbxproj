@@ -24,6 +24,8 @@
 		A4B60DA0260F69D500014470 /* WidgetCenterStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B60D9F260F69D500014470 /* WidgetCenterStoreTests.swift */; };
 		A4B60DA4260F748100014470 /* WidgetCenterSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B60DA3260F748100014470 /* WidgetCenterSpy.swift */; };
 		A4B60DA8260F7A9A00014470 /* XCTestCase+TrackingMemoryLeaks.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B60DA7260F7A9A00014470 /* XCTestCase+TrackingMemoryLeaks.swift */; };
+		A4B60DAC260F7C6300014470 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B60DAB260F7C6300014470 /* AppDelegate.swift */; };
+		A4B60DB0260F7D3E00014470 /* SomeEventTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B60DAF260F7D3E00014470 /* SomeEventTracking.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +60,8 @@
 		A4B60D9F260F69D500014470 /* WidgetCenterStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetCenterStoreTests.swift; sourceTree = "<group>"; };
 		A4B60DA3260F748100014470 /* WidgetCenterSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetCenterSpy.swift; sourceTree = "<group>"; };
 		A4B60DA7260F7A9A00014470 /* XCTestCase+TrackingMemoryLeaks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+TrackingMemoryLeaks.swift"; sourceTree = "<group>"; };
+		A4B60DAB260F7C6300014470 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A4B60DAF260F7D3E00014470 /* SomeEventTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SomeEventTracking.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +113,8 @@
 				A4B60D84260F5E1600014470 /* WidgetSize.swift */,
 				A4B60D88260F5E3B00014470 /* WidgetStore.swift */,
 				A4B60D8C260F5E5300014470 /* EvenTracking.swift */,
+				A4B60DAB260F7C6300014470 /* AppDelegate.swift */,
+				A4B60DAF260F7D3E00014470 /* SomeEventTracking.swift */,
 			);
 			path = WidgetCenterExample;
 			sourceTree = "<group>";
@@ -251,7 +257,9 @@
 				A4B60D00260E418400014470 /* ContentView.swift in Sources */,
 				A4B60D96260F67F000014470 /* WidgetCenterProtocol.swift in Sources */,
 				A4B60D85260F5E1600014470 /* WidgetSize.swift in Sources */,
+				A4B60DB0260F7D3E00014470 /* SomeEventTracking.swift in Sources */,
 				A4B60CFE260E418400014470 /* WidgetCenterExampleApp.swift in Sources */,
+				A4B60DAC260F7C6300014470 /* AppDelegate.swift in Sources */,
 				A4B60D89260F5E3B00014470 /* WidgetStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
