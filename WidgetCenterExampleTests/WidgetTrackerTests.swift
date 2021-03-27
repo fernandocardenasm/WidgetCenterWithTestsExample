@@ -107,6 +107,34 @@ class WidgetTrackerTests: XCTestCase {
         )
     }
     
+    func test_trackInstalledWidgetsTwice_tracksTwice() {
+        let (sut, tracking, store) = makeSUT()
+        
+        sut.trackInstalledWidgets()
+        sut.trackInstalledWidgets()
+        
+        let widgets: [WidgetSize] = [.small,
+                                     .medium,
+                                     .large]
+        store.completeRetrieval(withWidgets: widgets, at: 0)
+        store.completeRetrieval(withWidgets: widgets, at: 1)
+        
+        let eventName = "widgetEvent"
+        let dict = ["small",
+                    "medium",
+                    "large"]
+        XCTAssertEqual(tracking.events,
+                       [EventTrackingSpy.Event(
+                            name: eventName,
+                            dict: dict
+                       ),
+                       EventTrackingSpy.Event(
+                            name: eventName,
+                            dict: dict
+                       )]
+        )
+    }
+    
     func test_trackInstalledWidgets_whenWidgetsEmpty() {
         let (sut, tracking, store) = makeSUT()
         
