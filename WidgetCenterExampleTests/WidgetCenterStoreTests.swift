@@ -20,65 +20,49 @@ class WidgetCenterStoreTests: XCTestCase {
     func test_retrieveInstalledWidgets_deliversWidgetSizes() {
         let (sut, center) = makeSUT()
         
-        let exp = expectation(description: "retrieve completion")
-        sut.retrieveInstalledWidgets { result in
-            switch result {
-            case let .success(receivedSizes):
-                XCTAssertEqual(receivedSizes,
-                               [.small,
-                                .medium,
-                                .large])
-            case .failure:
-                XCTFail("Expected to result successfully, we got \(result) instead")
-            }
-            exp.fulfill()
+        expect(sut, toCompleteWith: .success([.small,
+                                              .medium,
+                                              .large])) {
+            let infos = [WidgetInfo(family: .systemSmall),
+                         WidgetInfo(family: .systemMedium),
+                         WidgetInfo(family: .systemLarge)]
+            center.complete(withInfos: infos)
         }
-        
-        let infos = [WidgetInfo(family: .systemSmall),
-                     WidgetInfo(family: .systemMedium),
-                     WidgetInfo(family: .systemLarge)]
-        
-        center.complete(withInfos: infos)
-        
-        wait(for: [exp], timeout: 0.1)
     }
     
     func test_retrieveInstalledWidgets_deliversWithEmptyArray() {
         let (sut, center) = makeSUT()
         
-        let exp = expectation(description: "retrieve completion")
-        sut.retrieveInstalledWidgets { result in
-            switch result {
-            case let .success(receivedSizes):
-                XCTAssertEqual(receivedSizes, [])
-            case .failure:
-                XCTFail("Expected to result successfully, we got \(result) instead")
-            }
-            exp.fulfill()
+        expect(sut, toCompleteWith: .success([])) {
+            center.complete(withInfos: [])
         }
-        
-        let infos = [WidgetInfo]()
-        
-        center.complete(withInfos: infos)
-        
-        wait(for: [exp], timeout: 0.1)
     }
     
     func test_retrieveInstalledWidgets_deliversErrorOnError() {
         let (sut, center) = makeSUT()
         
+        let centerError = anyNSError()
+        expect(sut, toCompleteWith: .failure(centerError)) {
+            center.complete(withError: centerError)
+        }
+    }
+    
+    func expect(_ sut: WidgetStore, toCompleteWith expectedResult: WidgetStore.RetrievalResult, when action: () -> Void) {
         let exp = expectation(description: "retrieve completion")
-        sut.retrieveInstalledWidgets { result in
-            switch result {
-            case .success:
-                XCTFail("Expected to result with failure, we got \(result) instead")
-            case .failure:
-                break
+        sut.retrieveInstalledWidgets { receivedResult in
+            switch (receivedResult, expectedResult) {
+            case let (.success(receivedSizes), .success(expectedSizes)):
+                XCTAssertEqual(receivedSizes, expectedSizes)
+            case let (.failure(receivedError as NSError), .failure(expectedError  as NSError)):
+                XCTAssertEqual(receivedError.domain, expectedError.domain)
+                XCTAssertEqual(receivedError.code, expectedError.code)
+            default:
+                XCTFail("Expected: \(expectedResult), got \(receivedResult) instead")
             }
             exp.fulfill()
         }
         
-        center.complete(withError: NSError(domain: "any", code: 200))
+        action()
         
         wait(for: [exp], timeout: 0.1)
     }
@@ -87,5 +71,9 @@ class WidgetCenterStoreTests: XCTestCase {
         let widgetCenter = WidgetCenterSpy()
         let sut = WidgetCenterStore(widgetCenter: widgetCenter)
         return (sut, widgetCenter)
+    }
+    
+    private func anyNSError() -> NSError {
+        NSError(domain: "any", code: 200)
     }
 }

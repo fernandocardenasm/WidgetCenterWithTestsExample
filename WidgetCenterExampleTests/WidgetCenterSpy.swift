@@ -10,7 +10,8 @@ import WidgetKit
 
 class WidgetCenterSpy: WidgetCenterProtocol {
     
-    typealias Completion = (Result<[WidgetInfo], Error>) -> Void
+    typealias ConfigResult = Result<[WidgetInfo], Error>
+    typealias Completion = (ConfigResult) -> Void
     var configCompletions = [Completion]()
     
     func getCurrentConfigurations(_ completion: @escaping Completion) {

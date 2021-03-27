@@ -8,5 +8,6 @@
 import Foundation
 
 public protocol WidgetStore {
-    func retrieveInstalledWidgets(completion: @escaping (Result<[WidgetSize], Error>) -> Void)
+    typealias RetrievalResult = Result<[WidgetSize], Error>
+    func retrieveInstalledWidgets(completion: @escaping (RetrievalResult) -> Void)
 }
