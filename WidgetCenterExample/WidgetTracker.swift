@@ -9,12 +9,12 @@ import Foundation
 
 public final class WidgetTracker {
     
-    private let trackingService: EventTracking
+    private let tracker: EventTracking
     private let store: WidgetStore
     
-    public init(trackingService: EventTracking,
+    public init(tracker: EventTracking,
          store: WidgetStore) {
-        self.trackingService = trackingService
+        self.tracker = tracker
         self.store = store
     }
     
@@ -23,7 +23,7 @@ public final class WidgetTracker {
             guard let self = self else { return }
             switch result {
             case let .success(widgets):
-                self.trackingService.track("widgetEvent", dict: self.map(widgets))
+                self.tracker.track("widgetEvent", dict: self.map(widgets))
             case .failure:
                 break
             }

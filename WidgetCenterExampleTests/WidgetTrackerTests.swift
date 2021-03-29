@@ -11,13 +11,13 @@ import XCTest
 class WidgetTrackerTests: XCTestCase {
     
     func test_init_doesTrackInstalledWidgets() {
-        let (_, tracking, _) = makeSUT()
+        let (_, tracker, _) = makeSUT()
         
-        XCTAssertTrue(tracking.events.isEmpty)
+        XCTAssertTrue(tracker.events.isEmpty)
     }
     
     func test_trackInstalledWidgets_onWidgetsNonEmpty() {
-        let (sut, tracking, store) = makeSUT()
+        let (sut, tracker, store) = makeSUT()
         
         sut.trackInstalledWidgets()
         
@@ -26,7 +26,7 @@ class WidgetTrackerTests: XCTestCase {
                                      .large]
         store.completeRetrieval(withWidgets: widgets)
         
-        XCTAssertEqual(tracking.events,
+        XCTAssertEqual(tracker.events,
                        [EventTrackingSpy.Event(
                             name: "widgetEvent",
                             dict: ["small",
@@ -37,7 +37,7 @@ class WidgetTrackerTests: XCTestCase {
     }
     
     func test_trackInstalledWidgetsTwice_tracksTwice() {
-        let (sut, tracking, store) = makeSUT()
+        let (sut, tracker, store) = makeSUT()
         
         sut.trackInstalledWidgets()
         sut.trackInstalledWidgets()
@@ -52,7 +52,7 @@ class WidgetTrackerTests: XCTestCase {
         let dict = ["small",
                     "medium",
                     "large"]
-        XCTAssertEqual(tracking.events,
+        XCTAssertEqual(tracker.events,
                        [EventTrackingSpy.Event(
                             name: eventName,
                             dict: dict
@@ -65,14 +65,14 @@ class WidgetTrackerTests: XCTestCase {
     }
     
     func test_trackInstalledWidgets_onWidgetsEmpty() {
-        let (sut, tracking, store) = makeSUT()
+        let (sut, tracker, store) = makeSUT()
         
         sut.trackInstalledWidgets()
         
         let widgets: [WidgetSize] = []
         store.completeRetrieval(withWidgets: widgets)
         
-        XCTAssertEqual(tracking.events,
+        XCTAssertEqual(tracker.events,
                        [EventTrackingSpy.Event(
                             name: "widgetEvent",
                             dict: []
@@ -91,15 +91,15 @@ class WidgetTrackerTests: XCTestCase {
     }
     
     private func makeSUT(file: StaticString = #file, line: UInt = #line) -> (WidgetTracker, EventTrackingSpy, WidgetStoreSpy) {
-        let tracking = EventTrackingSpy()
+        let tracker = EventTrackingSpy()
         let store = WidgetStoreSpy()
-        let sut = WidgetTracker(trackingService: tracking, store: store)
+        let sut = WidgetTracker(tracker: tracker, store: store)
         
-        trackForMemoryLeaks(tracking, file: file, line: line)
+        trackForMemoryLeaks(tracker, file: file, line: line)
         trackForMemoryLeaks(store, file: file, line: line)
         trackForMemoryLeaks(sut, file: file, line: line)
         
-        return (sut, tracking, store)
+        return (sut, tracker, store)
     }
     
     private func anyNSError() -> NSError {

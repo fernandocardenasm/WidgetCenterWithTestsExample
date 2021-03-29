@@ -20,8 +20,8 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 
 private struct WidgetComposer {
     static func makeWidgetTracker() -> WidgetTracker {
-        let tracking = SomeEventTracking()
+        let tracker = SomeEventTracking()
         let store = WidgetCenterStore(widgetCenter: WidgetCenter.shared)
-        return WidgetTracker(trackingService: tracking, store: store)
+        return WidgetTracker(tracker: tracker, store: store)
     }
 }
